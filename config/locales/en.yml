@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  model:
+    user:
+      valid_email: "Enter a valid email"
+      valid_password: "Password should be atleast three characters long"
+      presence_req:   "%{val} can't be blank"
