@@ -1,6 +1,10 @@
 en:
   hello: "Hello world"
-  app:   "Single Page Application"
+  app:   "Single Page App"
+  home:  "Home"
+  sign_up: "Sign Up"
+  login:   "Login"
+  welcome_msg: "Welcome to Single Page App. Please Signup/Login to Continue"
   model:
     user:
       valid_email: "Enter a valid email"
