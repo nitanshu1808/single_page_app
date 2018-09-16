@@ -1,0 +1,8 @@
+<% if @user.errors.any? %>
+	$(".modal-body").html("<%= j(render 'signup_form') %>")
+<% else %>
+	$("#navigation_bar").html("<%= j(render 'shared/navbar') %>")
+	$("#myModalLabel").html("")
+	$(".modal-body").html("")
+	$("#myModal").modal('hide');
+<% end %>

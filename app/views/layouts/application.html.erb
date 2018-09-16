@@ -12,14 +12,15 @@
 
   <body>
 
+    <div id="navigation_bar">
+      <%= render 'shared/navbar' %>
+    </div>
 
     <% flash.each do |key, value| %>
       <div class="<%= flash_class(key) %> text-center flash-msg">
         <%= value %>
       </div>
     <% end %>
-
-    <%= render 'shared/navbar' %>
 
     <div class="container text-center">
       <div id="loader"></div>

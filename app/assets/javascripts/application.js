@@ -14,6 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery.min
+//= require i18n.js
+//= require i18n/translations
 //= require bootstrap.min.js
 //= require jquery.validate
 //= require_tree .
