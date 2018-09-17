@@ -5,10 +5,6 @@ function setTimeoutflash() {
 };
 
 
-window.onload = function() {
-  $("#loader").hide();
-}
-
 $( document ).on('turbolinks:load', function() {
   $('#myModal').on('click', '.modal-body',  function() {
     $("#new_user").validate({
@@ -42,6 +38,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
   setTimeoutflash();
+  $("#loader").hide();
 })
 
 

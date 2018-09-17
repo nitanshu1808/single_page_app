@@ -5,7 +5,7 @@ module UtilityHelper
   end
 
   def login_link
-    link_to new_user_session_path, remote: true do
+    link_to new_user_session_path, class: "login-btn", remote: true do
       icon("glyphicon-log-in") + I18n.t("login")
     end
   end
@@ -35,7 +35,7 @@ module UtilityHelper
   end
 
   def welcme_user
-    link_to "javascript:void(0)", class: "signup-btn" do
+    link_to "javascript:void(0)" do
       icon("glyphicon-user") + I18n.t("welcm_user", {val: current_user.user_name})
     end
   end

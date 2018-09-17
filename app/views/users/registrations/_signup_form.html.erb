@@ -5,7 +5,7 @@
 
     <div class="or-line"><span><%= I18n.t("or") %></span></div>
 
-    <%= link_to user_facebook_omniauth_authorize_url() do %>
+    <%= link_to user_facebook_omniauth_authorize_path do %>
       <%= image_tag("login_with_fb.png", class: "fb-logo") %>
     <% end %>
 
