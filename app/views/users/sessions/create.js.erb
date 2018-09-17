@@ -1,7 +1,9 @@
 <% if @user.errors.any? %>
-  $(".modal-body").html("<%= j(render 'signup_form') %>")
+  $(".modal-body").html("<%= j(render 'login_form') %>")
 <% else %>
   $("#navigation_bar").html("<%= j(render 'shared/navbar') %>")
   $(".welcome_msg h1").html("<%= I18n.t('welcome_user_message') %>")
   updateLoggedInUserContent();
 <% end %>
+
+

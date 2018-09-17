@@ -1,27 +1,29 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new
+  end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.find_by(email: configure_sign_in_params["email"])
+      if @user && @user.valid_password?(configure_sign_in_params["password"])
+        flash.now[:notice] = I18n.t("devise.sessions.signed_in")
+        sign_in @user
+      else
+        @user = @user || User.new(signin_params)
+        @user.errors.add(:password, I18n.t('invalid_credentials'))
+      end
+  end
 
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  private
 
-  # protected
+  def configure_sign_in_params
+    params.require(:user).permit(:email, :password)
+  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-  # end
 end

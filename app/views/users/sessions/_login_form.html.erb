@@ -1,0 +1,21 @@
+<%= form_for @user, url: new_user_session_path, method: :post, remote: true do |f| %>
+    <div class="login-heading-area">
+      <h1><%= I18n.t("login_account") %></h1>
+    </div>
+
+    <div class="or-line"><span><%= I18n.t("or") %></span></div>
+
+    <%= link_to user_facebook_omniauth_authorize_url() do %>
+      <%= image_tag("login_with_fb.png", class: "fb-logo") %>
+    <% end %>
+
+    <%= f.email_field :email, :label => false, placeholder: I18n.t("enter_email") + " *", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:email][0] %>
+
+    <%= f.password_field :password, :label => false, autocomplete: "off", placeholder: I18n.t("enter_password") + " *", class: "form-control align-field", "data-validate-error": true, "data-error-msg": f.object.errors[:password][0]  %>
+
+    <div class="pull-left req-text">
+      *<%= I18n.t("required")%>
+    </div>
+
+    <%= f.submit I18n.t("login"), class: "form-submit" %>
+<% end %>

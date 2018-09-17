@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(configure_sign_up_params)
       if @user.save
+        flash.now[:notice] = I18n.t("devise.registrations.signed_up")
         sign_in @user
       end
   end

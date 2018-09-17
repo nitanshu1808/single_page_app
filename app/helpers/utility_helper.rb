@@ -40,4 +40,8 @@ module UtilityHelper
     end
   end
 
+  def welcome_msg
+    (current_user && I18n.t("welcome_user_message") )|| I18n.t("welcome_msg")
+  end
+
 end

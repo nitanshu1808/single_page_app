@@ -17,8 +17,11 @@ en:
   create_your_account:  "Create Your Account"
   required:             "Required"
   or:                   "OR"
-  logout:               Log Out
+  logout:               "Log Out"
   welcm_user:           "Welcome %{val}"
+  login_account:        "Login To Your Account"
+  invalid_credentials:  "Invalid Email and Password Combination"
+  welcome_user_message: "Welcome to Single Page App. You can now create Project and add tasks on it."
 
   model:
     user:

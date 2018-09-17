@@ -1,8 +1,8 @@
-$(function() {
+function setTimeoutflash() {
   setTimeout(function(){
     $('.flash-msg').slideUp(800);
   }, 1500);
-});
+};
 
 
 window.onload = function() {
@@ -40,4 +40,14 @@ $( document ).on('turbolinks:load', function() {
       }
     });
   });
+
+  setTimeoutflash();
 })
+
+
+function updateLoggedInUserContent(){
+  $("#myModalLabel").html("")
+  $(".modal-body").html("")
+  $("#myModal").modal('hide');
+  setTimeoutflash();
+}
